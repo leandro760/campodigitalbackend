@@ -1,23 +1,35 @@
-package com.app.users.domain;
+package com.app.customers.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "users")
+@Table(name = "Clientes")
 @Data
-public class User {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idCliente;
 
     @Column(nullable = false)
-    private String name;
+    private Int idTipoCliente;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String PrimerNombre;
 
     @Column(nullable = false)
+    private String PrimerApellido;
+
+    @Column(nullable = false)
+    private String password;
+
+      @Column(nullable = false)
+    private String password;
+    
+      @Column(nullable = false)
+    private String password;
+
+      @Column(nullable = false)
     private String password;
 
     // Empty constructor (required for JPA)
