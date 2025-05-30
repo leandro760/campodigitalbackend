@@ -1,4 +1,4 @@
-package com.app.users.application;
+package com.app.paymentMethods.application;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class UserService implements IUserService {
     @Transactional
     public User update(User user, Long id) {
         User existingUser = findById(id);
-        existingUser.setFullName(user.getFullName());
+        existingUser.setName(user.getName());
         existingUser.setEmail(user.getEmail());
         return userRepository.save(existingUser);
     }

@@ -30,7 +30,7 @@ public class UserDatasource {
 
     public Optional<User> update(User user, Long id) {
         return userRepository.findById(id).map(existingUser -> {
-            existingUser.setName(user.getName());
+            existingUser.setFullName(user.getFullName());
             existingUser.setEmail(user.getEmail());
             return userRepository.save(existingUser);
         });

@@ -1,4 +1,4 @@
-package com.app.users.application;
+package com.app.products.application;
 
 import java.util.List;
 

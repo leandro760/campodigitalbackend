@@ -1,6 +1,6 @@
 package com.app.users.domain;
 
-public enum ERole {
+public enum ETypeUser {
     ROLE_USER,
     ROLE_ADMIN
 }

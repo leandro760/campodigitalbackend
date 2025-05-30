@@ -53,7 +53,7 @@ public class AuthService {
 
         User user = new User();
         user.setEmail(request.getEmail());
-        user.setName(request.getName());
+        user.setFullName(request.getName());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         userRepository.save(user);
 
@@ -93,7 +93,7 @@ public class AuthService {
     @Transactional
     public ProfileResponse getProfile(String email) {
         return userRepository.findByEmail(email)
-            .map(user -> new ProfileResponse(user.getId(), user.getName(), user.getEmail()))
+            .map(user -> new ProfileResponse(user.getId(), user.getFullName(), user.getEmail()))
             .orElseThrow(() -> new RuntimeException("User not found"));
     }
 

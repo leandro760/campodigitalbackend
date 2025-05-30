@@ -1,4 +1,4 @@
-package com.app.users.application;
+package com.app.categories.application;
 
 import java.util.List;
 
