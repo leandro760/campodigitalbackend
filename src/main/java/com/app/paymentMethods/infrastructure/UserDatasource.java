@@ -9,11 +9,11 @@ import com.app.users.domain.IUserRepository;
 import com.app.users.domain.User;
 
 @Component
-public class UserDatasource {
+public class PaymentMethodsDatasource {
 
     private final IUserRepository userRepository;
 
-    public UserDatasource(IUserRepository userRepository) {
+    public PaymentMethodsDatasource(IUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

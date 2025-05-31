@@ -1,19 +1,17 @@
-package com.app.users.infrastructure;
+package com.app.documentTypes.infrastructure; 
 
-public class UserDto {
+public class DocumentTypeDto {
     private Long id;
     private String name;
-    private String email;
 
     // Empty constructor
-    public UserDto() {
+    public DocumentTypeDto() {
     }
 
     // Constructor with parameters
-    public UserDto(Long id, String name, String email) {
+    public DocumentTypeDto(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.email = email;
     }
 
     // Getters y Setters
@@ -32,23 +30,14 @@ public class UserDto {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
     
 
     // toString() method
     @Override
     public String toString() {
-        return "UserDto{" +
+        return "DocumentTypeDto{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
                 '}';
     }
 }
