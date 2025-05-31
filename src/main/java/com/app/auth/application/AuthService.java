@@ -7,7 +7,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,7 +29,7 @@ public class AuthService {
     private final JwtUtils jwtUtils;
     private final IUserRepository userRepository;
     private final IJwtTokenRepository tokenRepository;
-    private final PasswordEncoder passwordEncoder;
+    
 
     public AuthResponse login(String email, String password) {
         try {
@@ -53,8 +52,7 @@ public class AuthService {
 
         User user = new User();
         user.setEmail(request.getEmail());
-        user.setFullName(request.getName());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setFullName(request.getName());        
         userRepository.save(user);
 
         // Authenticate the user and generate tokens

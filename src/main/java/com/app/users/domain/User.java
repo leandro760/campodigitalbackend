@@ -3,6 +3,8 @@ package com.app.users.domain;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import io.jsonwebtoken.security.Password;
+
 
 
 @Entity
@@ -42,6 +44,9 @@ public class User {
 
     @Column(name = "Address", nullable = false, length = 100)
     private String address;
+    
+    @Column(name = "Password", nullable = false,length = 20)
+    private String password;
 
     // Empty constructor (required for JPA)
     public User() {}
@@ -49,7 +54,7 @@ public class User {
     // Constructor with parameters
      public User(Integer id, ETypeUser eTypeUser, String fullName, Integer phone, ETypeDocument eTypeDocument,
                 Integer documentNumber, String email, LocalDateTime birthDate, LocalDateTime registrationDate,
-                String address) {
+                String address, String password) {
         this.id = id;
         this.userType = eTypeUser;
         this.fullName = fullName;
@@ -60,6 +65,7 @@ public class User {
         this.birthDate = birthDate;
         this.registrationDate = registrationDate;
         this.address = address;
+        this.password =  password;
     }
     // Getters y Setters
      public Integer getId() {
@@ -140,5 +146,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 }

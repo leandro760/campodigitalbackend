@@ -49,6 +49,7 @@ public class JwtUtils {
                 .getPayload();
     }
 
+    
     public String generateToken(Authentication authentication) {
         return generateToken(authentication.getName());
     }

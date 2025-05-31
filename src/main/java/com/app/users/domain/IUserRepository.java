@@ -40,4 +40,6 @@ public interface IUserRepository extends JpaRepository<User, Long> {
 
     // Check if an email is already registered
     boolean existsByEmail(String email);
+
+    
 }
