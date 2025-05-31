@@ -1,15 +1,15 @@
 package com.app.paymentMethods.infrastructure;
 
-public class paymentMethodDto {
+public class PaymentMethodDto {
     private Long id;
     private String name;
 
     // Empty constructor
-    public paymentMethodDto() {
+    public PaymentMethodDto() {
     }
 
     // Constructor with parameters
-    public paymentMethodDto(Long id, String name, String email) {
+    public PaymentMethodDto(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -33,11 +33,12 @@ public class paymentMethodDto {
     
 
     // toString() method
-    @Override
+   @Override
     public String toString() {
-        return "paymentMethodDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    return "PaymentMethodDto{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            '}';
     }
+
 }

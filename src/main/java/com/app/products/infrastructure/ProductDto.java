@@ -4,18 +4,18 @@ public class ProductDto {
     private Long id;
     private String name;
     private String description;
-    private Double price;
+    private Float price;
 
     // Empty constructor
     public ProductDto() {
     }
 
     // Constructor with parameters
-    public ProductDto(Long id, String name, String description, Double price) {
+    public ProductDto(Long id, String name, String description, Float price) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.price = price
+        this.price = price;
     }
 
     // Getters y Setters
@@ -43,11 +43,11 @@ public class ProductDto {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
     

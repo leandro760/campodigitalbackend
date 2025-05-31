@@ -25,7 +25,7 @@ public class Product {
     private ECategory category;
 
     @Column(name = "Price", nullable = false, precision = 10, scale = 2)
-    private Double price;
+    private Float price;
 
     @Column(name = "Count", nullable = false)
     private Integer count;
@@ -34,7 +34,7 @@ public class Product {
     public Product() {}
 
     // Constructor con parámetros
-    public Product(Integer id, String name, String description, String unitOfMeasure, ECategory category, Double price, Integer count) {
+    public Product(Integer id, String name, String description, String unitOfMeasure, ECategory category, Float price, Integer count) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -85,6 +85,16 @@ public class Product {
     public void setCategory(ECategory category) {
         this.category = category;
     }
+
+    public Float getPrice() {
+    return price;
+    }   
+
+
+    public void setPrice(Float price) {
+    this.price = price;
+    }
+
 }
 
  

@@ -1,15 +1,15 @@
 package com.app.documentTypes.infrastructure; 
 
-public class DocumentTypeDto {
+public class documentTypeDto {
     private Long id;
     private String name;
 
     // Empty constructor
-    public DocumentTypeDto() {
+    public documentTypeDto() {
     }
 
     // Constructor with parameters
-    public DocumentTypeDto(Long id, String name) {
+    public documentTypeDto(Long id, String name) {
         this.id = id;
         this.name = name;
     }
