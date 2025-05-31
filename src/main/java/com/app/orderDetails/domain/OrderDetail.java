@@ -107,4 +107,6 @@ public class OrderDetail {
     public void setOrder(EOrder order) {
         this.order = order;
     }
+
+   
 }

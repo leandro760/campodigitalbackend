@@ -24,21 +24,21 @@ public class CategoryDatasource {
         return categoryRepository.findById(id);
     }
 
-    public categ save(Category category) {
-        return userRepository.save(user);
+    public Category save(Category category) {
+        return categoryRepository.save(category);
     }
 
-    public Optional<User> update(User user, Long id) {
-        return userRepository.findById(id).map(existingUser -> {
-            existingUser.setFullName(user.getFullName());
-            existingUser.setEmail(user.getEmail());
-            return userRepository.save(existingUser);
+    public Optional<Category> update(Category category, Long id) {
+        return categoryRepository.findById(id).map(existCategory -> {
+            existCategory.setName(category.getName());
+            
+            return categoryRepository.save(existCategory);
         });
     }
 
     public boolean deleteById(Long id) {
-        if (userRepository.existsById(id)) {
-            userRepository.deleteById(id);
+        if (categoryRepository.existsById(id)) {
+            categoryRepository.deleteById(id);
             return true;
         }
         return false;

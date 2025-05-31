@@ -1,19 +1,18 @@
-package com.app.users.infrastructure;
+package com.app.categories.infrastructure;
 
-public class UserDto {
+public class CategoryDTO {
     private Long id;
     private String name;
-    private String email;
+    
 
     // Empty constructor
-    public UserDto() {
+    public CategoryDTO() {
     }
 
     // Constructor with parameters
-    public UserDto(Long id, String name, String email) {
+    public CategoryDTO(Long id, String name) {
         this.id = id;
-        this.name = name;
-        this.email = email;
+        this.name = name;        
     }
 
     // Getters y Setters
@@ -33,13 +32,7 @@ public class UserDto {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+   
     
 
     // toString() method
@@ -47,8 +40,7 @@ public class UserDto {
     public String toString() {
         return "UserDto{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +                
                 '}';
     }
 }
