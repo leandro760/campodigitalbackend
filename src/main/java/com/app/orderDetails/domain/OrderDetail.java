@@ -31,9 +31,6 @@ public class OrderDetail {
     @JoinColumn(name = "PaymentMethodId", nullable = false)
     private PaymentMethod paymentMethod;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "OrderNumber")
-    private EOrder order;
 
     // Constructor vacío (requerido por JPA)
     public OrderDetail() {}
@@ -47,7 +44,7 @@ public class OrderDetail {
         this.salePrice = salePrice;
         this.subTotal = subTotal;
         this.paymentMethod = paymentMethod;
-        this.order = order;
+        
     }
 
     // Métodos getter y setter
@@ -100,13 +97,6 @@ public class OrderDetail {
         this.paymentMethod = paymentMethod;
     }
 
-    public EOrder getOrder() {
-        return order;
-    }
-
-    public void setOrder(EOrder order) {
-        this.order = order;
-    }
-
+ 
    
 }

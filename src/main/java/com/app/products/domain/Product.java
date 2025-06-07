@@ -20,9 +20,8 @@ public class Product {
     @Column(name = "UnitOfMeasure", nullable = false, length = 50)
     private String unitOfMeasure;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CategoryId", nullable = false)
-    private ECategory category;
+    @Column(name = "Category", nullable = false, length = 100)
+    private String category;
 
     @Column(name = "Price", nullable = false, precision = 10, scale = 2)
     private Float price;
@@ -34,17 +33,17 @@ public class Product {
     public Product() {}
 
     // Constructor con parámetros
-    public Product(Integer id, String name, String description, String unitOfMeasure, ECategory category, Float price, Integer count) {
+    public Product(Integer id, String name, String description, String unitOfMeasure, Float price, Integer count, String category) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.unitOfMeasure = unitOfMeasure;
-        this.category = category;
         this.price = price;
         this.count = count;
+        this.category = category;
     }
 
-    // Métodos getter y setter
+    // Getters y Setters
 
     public Integer getId() {
         return id;
@@ -78,23 +77,27 @@ public class Product {
         this.unitOfMeasure = unitOfMeasure;
     }
 
-    public ECategory getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(ECategory category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
     public Float getPrice() {
-    return price;
-    }   
-
-
-    public void setPrice(Float price) {
-    this.price = price;
+        return price;
     }
 
-}
+    public void setPrice(Float price) {
+        this.price = price;
+    }
 
- 
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+}

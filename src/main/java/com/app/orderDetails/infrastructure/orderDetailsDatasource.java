@@ -32,7 +32,7 @@ public class orderDetailsDatasource {
     public Optional<OrderDetail> update(OrderDetail newData, Long id) {
         return orderDetailRepository.findById(id).map(existingOrderDetail -> {
             existingOrderDetail.setProduct(newData.getProduct());
-            existingOrderDetail.setOrder(newData.getOrder());
+           
             existingOrderDetail.setPaymentMethod(newData.getPaymentMethod());
             existingOrderDetail.setQuantity(newData.getQuantity());
             existingOrderDetail.setSalePrice(newData.getSalePrice());            
