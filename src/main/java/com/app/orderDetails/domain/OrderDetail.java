@@ -14,10 +14,6 @@ public class OrderDetail {
     @Column(name = "OrderDetailId")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ProductId", nullable = false)
-    private EProduct product;
-
     @Column(name = "Quantity", nullable = false)
     private Integer quantity;
 
@@ -36,10 +32,9 @@ public class OrderDetail {
     public OrderDetail() {}
 
     // Constructor con parámetros
-    public OrderDetail(Integer id, EProduct product, Integer quantity, Double salePrice, Double subTotal,
-                       PaymentMethod paymentMethod, EOrder order) {
+    public OrderDetail(Integer id, Integer quantity, Double salePrice, Double subTotal,
+                       PaymentMethod paymentMethod) {
         this.id = id;
-        this.product = product;
         this.quantity = quantity;
         this.salePrice = salePrice;
         this.subTotal = subTotal;
@@ -56,15 +51,7 @@ public class OrderDetail {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public EProduct getProduct() {
-        return product;
-    }
-
-    public void setProduct(EProduct product) {
-        this.product = product;
-    }
-
+    
     public Integer getQuantity() {
         return quantity;
     }

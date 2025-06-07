@@ -41,7 +41,6 @@ public class OrderDetailService implements IOrderDetailService {
     @Transactional
     public OrderDetail update(OrderDetail orderDetail, Long id) {
         OrderDetail existingOrderDetail = findById(id);
-        existingOrderDetail.setProduct(orderDetail.getProduct());
         
         existingOrderDetail.setPaymentMethod(orderDetail.getPaymentMethod());
         existingOrderDetail.setQuantity(orderDetail.getQuantity());
