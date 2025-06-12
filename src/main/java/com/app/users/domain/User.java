@@ -16,9 +16,8 @@ public class User {
     @Column(name = "UserId")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "UserTypeId", nullable = false)
-    private ETypeUser userType;
+    @Column(name = "UserTypeId", nullable = false)
+    private Integer userType;
 
     @Column(name = "FullName", nullable = false, length = 220)
     private String fullName;
@@ -26,9 +25,8 @@ public class User {
     @Column(name = "Phone", nullable = false)
     private Integer phone;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DocumentTypeId", nullable = false)
-    private ETypeDocument documentType;
+    @Column(name = "DocumentTypeId", nullable = false)
+    private Integer documentType;
 
     @Column(name = "DocumentNumber", nullable = false)
     private Integer documentNumber;
@@ -52,7 +50,7 @@ public class User {
     public User() {}
 
     // Constructor with parameters
-     public User(Integer id, ETypeUser eTypeUser, String fullName, Integer phone, ETypeDocument eTypeDocument,
+     public User(Integer id, Integer eTypeUser, String fullName, Integer phone, Integer  eTypeDocument,
                 Integer documentNumber, String email, LocalDateTime birthDate, LocalDateTime registrationDate,
                 String address, String password) {
         this.id = id;
@@ -76,11 +74,11 @@ public class User {
         this.id = id;
     }
 
-    public ETypeUser getETypeUser() {
+    public Integer getETypeUser() {
         return userType;
     }
 
-    public void setETypeUser(ETypeUser userType) {
+    public void setETypeUser(Integer userType) {
         this.userType = userType;
     }
 
@@ -100,11 +98,11 @@ public class User {
         this.phone = phone;
     }
 
-    public ETypeDocument getETypeDocument() {
+    public Integer getETypeDocument() {
         return documentType;
     }
 
-    public void setETypeDocument(ETypeDocument documentType) {
+    public void setETypeDocument(Integer documentType) {
         this.documentType = documentType;
     }
 

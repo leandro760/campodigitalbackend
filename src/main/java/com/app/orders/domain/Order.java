@@ -28,16 +28,15 @@ public class Order {
     @Column(name = "OrderValue", nullable = false)
     private Double orderValue;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "OrderDetailId")
-    private Status orderDetail;
+    @Column(name = "orderDetail", nullable = false)
+    private String orderDetail;
 
     // Constructor vacío (requerido por JPA)
     public Order() {}
 
     // Constructor con parámetros
     public Order(Integer id, LocalDateTime orderDate, Integer orderNumber, LocalDateTime shippingDate,
-                 LocalDateTime deliveryDate, Double orderValue, Status orderDetail) {
+                 LocalDateTime deliveryDate, Double orderValue, String orderDetail) {
         this.id = id;
         this.orderDate = orderDate;
         this.orderNumber = orderNumber;
@@ -97,11 +96,11 @@ public class Order {
         this.orderValue = orderValue;
     }
 
-    public Status getOrderDetail() {
+    public String getOrderDetail() {
         return orderDetail;
     }
 
-    public void setOrderDetail(Status orderDetail) {
+    public void setOrderDetail(String orderDetail) {
         this.orderDetail = orderDetail;
     }
 }
